@@ -1,0 +1,32 @@
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+
+export default class ImageGalleryItem extends Component {
+  static propTypes = {
+    getData: PropTypes.arrayOf(PropTypes.object).isRequired,
+    openModal: PropTypes.func.isRequired,
+  };
+
+  onClick(data) {
+    this.props.openModal(data);
+  }
+  render() {
+    const { getData } = this.props;
+    // console.log('getData :', getData);
+    return getData.map(data => {
+      return (
+        <li
+          className="gallery-item"
+          key={data.id}
+          onClick={() => this.onClick(data.largeImageURL)}
+        >
+          <img src={data.webformatURL} alt={data.tags} />
+        </li>
+      );
+    });
+  }
+}
+
+// id - уникальный идентификатор
+// webformatURL - ссылка на маленькое изображение для списка карточек
+// largeImageURL - ссылка на большое изображение для модального окна
