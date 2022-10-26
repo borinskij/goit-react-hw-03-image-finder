@@ -1,9 +1,12 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import css from './Modal.module.css';
-// import css from '../../Styles.module.css';
 
 export default class Modal extends Component {
+  static propTypes = {
+    data: PropTypes.string.isRequired,
+    close: PropTypes.func.isRequired,
+  };
   componentDidMount() {
     window.addEventListener('keydown', this.hendleKeyModalClose);
   }
@@ -28,17 +31,3 @@ export default class Modal extends Component {
     );
   }
 }
-
-// import * as basicLightbox from 'basiclightbox';
-// // import PropTypes from 'prop-types';
-// import React, { Component } from 'react';
-
-// export default class Modal extends Component {
-//   //   static propTypes = { data: String };
-//   render() {
-//     console.log('props :>> ', this.props.data);
-//     const instance = basicLightbox.create(`${this.props.data}
-//     `);
-//     return instance.show();
-//   }
-// }

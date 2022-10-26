@@ -1,10 +1,8 @@
 import React from 'react';
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import { Vortex } from 'react-loader-spinner';
-// import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 function Loader(props) {
-  //   console.log('props :>> ', props.isLoader);
   return (
     <Vortex
       visible={props.isLoader}
@@ -16,6 +14,6 @@ function Loader(props) {
   );
 }
 
-// Loader.propTypes = {}
+Loader.propTypes = { isLoader: PropTypes.bool.isRequired };
 
 export default Loader;

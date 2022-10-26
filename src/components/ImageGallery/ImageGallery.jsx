@@ -2,7 +2,8 @@ import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
 import Modal from 'components/Modal/Modal';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-// import css
+import css from './ImageGallery.module.css';
+
 export default class ImageGallery extends Component {
   static propTypes = {
     getData: PropTypes.arrayOf(PropTypes.object).isRequired,
@@ -19,7 +20,7 @@ export default class ImageGallery extends Component {
   render() {
     return (
       <>
-        <ul className="gallery">
+        <ul className={css.gallery}>
           <ImageGalleryItem
             getData={this.props.getData}
             openModal={this.openModal}

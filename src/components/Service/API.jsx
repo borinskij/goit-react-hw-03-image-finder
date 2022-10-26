@@ -9,7 +9,7 @@ const instance = axios.create({
     page: 1,
     image_type: 'photo',
     orientation: 'horizontal',
-    per_page: 3,
+    per_page: 12,
   },
 });
 

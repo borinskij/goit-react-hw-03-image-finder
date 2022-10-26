@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import css from './Searchbar.modal.css';
+import css from './Searchbar.module.css';
 
 export default class Searchbar extends Component {
   static propTypes = { hendelSubmit: PropTypes.func.isRequired };
@@ -18,14 +18,14 @@ export default class Searchbar extends Component {
     return (
       <div>
         <header className={css.searchbar}>
-          <form className="form" onSubmit={this.hendelSubmit}>
-            <button type="submit" className="button">
-              <span className="button-label">Search</span>
+          <form className={css.form} onSubmit={this.hendelSubmit}>
+            <button type="submit" className={css.button}>
+              <span className={css.buttonLabel}>Search</span>
             </button>
 
             <input
               onChange={this.hendelerChange}
-              className="input"
+              className={css.input}
               type="text"
               name="name"
               value={this.state.name}

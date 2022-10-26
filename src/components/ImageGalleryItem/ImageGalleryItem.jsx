@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import css from './ImageGalleryItem.module.css';
 
 export default class ImageGalleryItem extends Component {
   static propTypes = {
@@ -15,7 +16,7 @@ export default class ImageGalleryItem extends Component {
     return getData.map(data => {
       return (
         <li
-          className="gallery-item"
+          className={css.galleryItem}
           key={data.id}
           onClick={() => this.onClick(data.largeImageURL)}
         >

@@ -5,7 +5,6 @@ import css from './Button.module.css';
 export default class Button extends Component {
   static propTypes = { hendelNextPage: PropTypes.func.isRequired };
   handelClick = () => {
-    console.log('props :>> ', this.props);
     this.props.hendelNextPage();
   };
   render() {
@@ -16,21 +15,3 @@ export default class Button extends Component {
     );
   }
 }
-// import React from 'react';
-// import PropTypes from 'prop-types';
-
-// const Button = hendelNextPage => {
-//   //   console.log('hendelNextPage :', hendelNextPage);
-//   const handelClick = () => {
-//     return hendelNextPage();
-//   };
-//   return (
-//     <button type="button" onClick={handelClick} className="button">
-//       <span>Давай ще</span>
-//     </button>
-//   );
-// };
-
-// Button.propTypes = { hendelNextPage: PropTypes.func.isRequired };
-
-// export default Button;
