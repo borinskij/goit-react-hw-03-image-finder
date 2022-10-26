@@ -2,7 +2,7 @@ import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
 import Modal from 'components/Modal/Modal';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-
+// import css
 export default class ImageGallery extends Component {
   static propTypes = {
     getData: PropTypes.arrayOf(PropTypes.object).isRequired,
@@ -12,10 +12,10 @@ export default class ImageGallery extends Component {
     modal: false,
   };
 
-  openModal(data) {
-    console.log('data433563', data);
-    this.setState(prevState => ({ mdodal: !prevState.modal }));
-  }
+  openModal = data => {
+    this.setState(prevState => ({ modal: !prevState.modal }));
+    this.setState({ data });
+  };
   render() {
     return (
       <>
@@ -25,7 +25,9 @@ export default class ImageGallery extends Component {
             openModal={this.openModal}
           />
           {this.props.children}
-          {this.state.modal && <Modal data={this.openModal} />}
+          {this.state.modal && (
+            <Modal close={this.openModal} data={this.state.data} />
+          )}
         </ul>
       </>
     );

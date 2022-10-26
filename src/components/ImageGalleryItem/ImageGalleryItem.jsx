@@ -12,7 +12,6 @@ export default class ImageGalleryItem extends Component {
   }
   render() {
     const { getData } = this.props;
-    // console.log('getData :', getData);
     return getData.map(data => {
       return (
         <li
