@@ -31,7 +31,7 @@ export default class Searchbar extends Component {
               value={this.state.name}
               //   autocomplete="off"
               //   autofocus
-              placeholder="Search images and photos"
+              placeholder="Search images "
             />
           </form>
         </header>

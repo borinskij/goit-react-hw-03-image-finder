@@ -4,7 +4,7 @@ import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
 import Button from './Button/Button';
 import Loader from './Loader/Loader';
-import css from '../Styles.module.css';
+import css from '../styles.module.css';
 
 export class App extends Component {
   state = {
