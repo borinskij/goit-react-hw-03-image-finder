@@ -4,7 +4,7 @@ import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
 import Button from './Button/Button';
 import Loader from './Loader/Loader';
-import css from '../styles.module.css';
+import css from './Searchbar/Searchbar.module.css';
 
 export class App extends Component {
   state = {
@@ -40,7 +40,6 @@ export class App extends Component {
   };
 
   render() {
-    // console.log('this.state.getDataAPP :>> ', this.state.getData);
     return (
       <div className={css.app}>
         <Searchbar hendelSubmit={this.hendelSubmit} />
