@@ -44,7 +44,7 @@ export class App extends Component {
         <Searchbar hendelSubmit={this.hendelSubmit} />
         <Loader isLoader={this.state.isLoader} />
         <ImageGallery getData={this.state.getData}>
-          {this.state.getData.length > 0 && (
+          {this.state.getData.length > 12 && (
             <Button hendelNextPage={this.hendelNextPage} />
           )}
         </ImageGallery>
