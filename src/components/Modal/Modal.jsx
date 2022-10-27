@@ -10,9 +10,14 @@ export default class Modal extends Component {
   componentDidMount() {
     window.addEventListener('keydown', this.hendleKeyModalClose);
   }
+  onClick = e => {
+    if (e.target === e.currentTarget) {
+      return this.props.close();
+    }
+    return;
+  };
 
   hendleKeyModalClose = event => {
-    console.log('event :', event.code);
     if (event.code === 'Escape') {
       this.props.close();
     }
@@ -23,7 +28,7 @@ export default class Modal extends Component {
 
   render() {
     return (
-      <div className={css.overlay} onClick={this.props.close}>
+      <div className={css.overlay} onClick={this.onClick}>
         <div className={css.modal}>
           <img src={this.props.data} alt="ccc" />
         </div>

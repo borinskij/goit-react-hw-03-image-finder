@@ -36,7 +36,6 @@ export class App extends Component {
   }
   hendelNextPage = () => {
     this.setState(prevState => ({ getPage: prevState.getPage + 1 }));
-    console.log('getPage :>> ', this.state.getPage);
   };
 
   render() {
@@ -45,7 +44,9 @@ export class App extends Component {
         <Searchbar hendelSubmit={this.hendelSubmit} />
         <Loader isLoader={this.state.isLoader} />
         <ImageGallery getData={this.state.getData}>
-          {this.state.name && <Button hendelNextPage={this.hendelNextPage} />}
+          {this.state.getData.length > 0 && (
+            <Button hendelNextPage={this.hendelNextPage} />
+          )}
         </ImageGallery>
       </div>
     );
